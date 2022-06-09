@@ -1,24 +1,19 @@
+// Escribir un programa que acepte dos argumentos n y m. El tamaño de un array es el argumento n. El programa llena el array con números aleatorios entre 0 y m y los imprime uno por línea.
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
+#include <time.h>
 
 int main(int argc, char  *argv[]) {
-  int n = atoi(argv[1]);
-  int m = atoi(argv[2]);
-  int max = INT_MIN;
-  int min = INT_MAX;
-  double sum = 0.0;
-  int array[n];
-  for (int i = 0; i < n; i++){
-    array[i] = rand() % m;
-    if (array[i] > max) max = array[i];
-    if (array[i] < min) min = array[i];
-      sum += array[i];
-    }
-  for (int i = 0; i < n; i++)
-    printf("%d ", array[i]);
-    printf("\n");
-     double prom = sum/n;
-     printf("%d %d %.2f\n", max, min, prom);
+  srand (time(NULL));
+  int m = atoi(argv[1]);
+  int n = atoi(argv[2]);
+  int a[n];
+
+  for (int i = 0; i < n; i++) {
+   a[i] = rand () % m;
+   printf("%d\n", a[i]);
+  }
+  printf("\n");
   return 0;
 }
