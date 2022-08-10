@@ -1,19 +1,28 @@
-// Escribir un programa que acepte dos argumentos n y m. El tamaño de un array es el argumento n. El programa llena el array con números aleatorios entre 0 y m y los imprime uno por línea.
-
+// ejercicio3.
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
-int main(int argc, char  *argv[]) {
-  srand (time(NULL));
-  int m = atoi(argv[1]);
-  int n = atoi(argv[2]);
-  int a[n];
-
+int main(void) {
+  int n;
+  int suma = 0;
+  scanf("%d", &n);
   for (int i = 0; i < n; i++) {
-   a[i] = rand () % m;
-   printf("%d\n", a[i]);
+    int m;
+    scanf("%d ", &m);
+    suma += m;
   }
-  printf("\n");
+  printf("%d", suma);
+  //printf("%d\n", n);
   return 0;
 }
+
+
+
+
+
+
+
+
+//char word[100];
+// puts("Hola estoy en stdout")
+//printf("%s\n", word);
+//scanf("%s", word);
